@@ -3,13 +3,13 @@ name: qa-test-design
 description: >-
   Writes a layered test-case list without implementing tests. Use when the
   operator wants cases only, not TDD or test code. For writing tests, use
-  qa-agent-kit instead.
+  qa-test-writer instead.
 disable-model-invocation: true
 ---
 
 # QA Test Design
 
-Use this skill only for a **case list without implementation**. When writing tests or doing TDD, use the root `qa-agent-kit` skill instead and load one stack file.
+Use this skill only for a **case list without implementation**. When writing tests or doing TDD, use the root `qa-test-writer` skill instead and load one stack file.
 
 Read this skill only when the kit selected test design (no code), or when `qa-orchestrator` dispatched this specialist. Outputs are **drafts** until the operator approves. Do not spawn sub-agents; the parent orchestrator decides.
 
@@ -18,16 +18,16 @@ Read this skill only when the kit selected test design (no code), or when `qa-or
 - capability_tier: `balanced`
 - reasoning_effort: `medium`
 - resolved_target: Grok 4.6
-- Role: [test-design-analyst.md](../qa-agent-kit/roles/test-design-analyst.md) uses the same envelope. Do not escalate to flagship for case lists.
+- Role: [test-design-analyst.md](../qa-test-writer/roles/test-design-analyst.md) uses the same envelope. Do not escalate to flagship for case lists.
 
 ## Steps
 
 1. Name `<slug>` and the behavior. Read the ticket, spec, or behavior diff.
-2. Classify the repo via [repo-profiles.md](../qa-agent-kit/references/repo-profiles.md).
+2. Classify the repo via [repo-profiles.md](../qa-test-writer/references/repo-profiles.md).
 3. List risks: input boundaries, rules, states, personas, auth, money, leftover data.
-4. Pick techniques from [test-design.md](../qa-agent-kit/references/test-design.md). Do not apply every technique.
-5. Assign layer, surface, stack, suite_tag, and run_target using [test-layers.md](../qa-agent-kit/references/test-layers.md). Load **one** stack file from the write-tests skill table (Jest, Cypress, Playwright, backend unit, Pact, deployment, or Selenium).
-6. Write `docs/qa/<slug>/test-cases.md` from [test-cases.md](../qa-agent-kit/assets/templates/test-cases.md). Mark it draft. List any product, course key, ISBN, or catalog value the operator must provide. Leave those cells empty rather than inventing them.
+4. Pick techniques from [test-design.md](../qa-test-writer/references/test-design.md). Do not apply every technique.
+5. Assign layer, surface, stack, suite_tag, and run_target using [test-layers.md](../qa-test-writer/references/test-layers.md). Load **one** stack file from the qa-test-writer stack list (Jest, Cypress, Playwright, backend unit, Pact, deployment, or Selenium).
+6. Write `docs/qa/<slug>/test-cases.md` from [test-cases.md](../qa-test-writer/assets/templates/test-cases.md). Mark it draft. List any product, course key, ISBN, or catalog value the operator must provide. Leave those cells empty rather than inventing them.
 7. Stop. Do not implement tests unless the operator asked. Wait for operator approval before treating the list as final. If required test data is missing, ask for it in the same stop.
 
 ## Rules

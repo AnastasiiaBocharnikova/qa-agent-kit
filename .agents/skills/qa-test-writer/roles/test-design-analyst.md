@@ -16,7 +16,7 @@ inputs:
   - repo-profiles.md classification
   - existing tests (layout only)
 constraints:
-  - load one stack file from the write-tests skill table, not ui-frontend.md or api-backend.md as a whole
+  - load one stack file from the qa-test-writer stack list, not ui-frontend.md or api-backend.md as a whole
   - apply techniques from references/test-design.md
   - assign layer, surface, stack, suite_tag, run_target
   - do not invent product IDs, course keys, or ISBNs; list what the operator must provide

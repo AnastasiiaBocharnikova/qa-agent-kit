@@ -1,9 +1,9 @@
-# Role: QA effort advisor
+# Role: QA estimate advisor
 
 Use when estimating should be isolated from implementation.
 
 ```yaml
-id: qa-effort-advisor
+id: qa-estimate-advisor
 role: analysis
 capability_tier: fast/economy
 reasoning_effort: low

@@ -8,10 +8,10 @@ Portable fields (stable): `capability_tier` + `reasoning_effort`.
 | Role | capability_tier | reasoning_effort | resolved_target | Why |
 |---|---|---|---|---|
 | `qa-orchestrator` | fast/economy | low | Composer 2.5 Fast | Classify and dispatch. Not design, write, or review. |
-| Write tests / TDD `qa-agent-kit` | balanced | medium | Grok 4.6 | Foundation + one stack file. Not architecture. |
+| Write tests / TDD `qa-test-writer` | balanced | medium | Grok 4.6 | Foundation + one stack file. Not architecture. |
 | `qa-test-design` / `test-design-analyst` | balanced | medium | Grok 4.6 | Case list only. |
 | `qa-test-review` / `test-quality-reviewer` | balanced | medium | Grok 4.6 | Rubric + diff. Escalate only when the table below matches. Never closes the human gate. |
-| `qa-effort` / `qa-effort-advisor` | fast/economy | low | Composer 2.5 Fast | S/M/L table. |
+| `qa-estimate` / `qa-estimate-advisor` | fast/economy | low | Composer 2.5 Fast | S/M/L table. |
 
 ## Escalate (once, with a reason)
 
