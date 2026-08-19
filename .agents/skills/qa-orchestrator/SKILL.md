@@ -14,12 +14,7 @@ This is the **only** dispatcher in the kit. Product `AGENTS.md` gets a short ins
 
 Classify, dispatch, stop for a human. Do not write tests, design cases, estimate, or review yourself.
 
-## Model
-
-- capability_tier: `fast/economy`
-- reasoning_effort: `low`
-- resolved_target: Composer 2.5 Fast
-- Role: [qa-orchestrator.md](../qa-test-writer/roles/qa-orchestrator.md)
+Role: [qa-orchestrator.md](../qa-test-writer/roles/qa-orchestrator.md)
 
 ## Classify
 
@@ -42,7 +37,7 @@ Spawn a Cursor Task `generalPurpose` subagent when isolation buys something:
 - Parallel stacks/repos (Jest vs JUnit). One stack file per Task.
 - Mixed pipeline: design and write in separate contexts.
 
-Each Task prompt includes: the specialist skill path, the matching role YAML under `.agents/skills/qa-test-writer/roles/`, **one** stack file name from the write-tests list, and the slug. Models: Grok 4.6 for design/write/review; Composer 2.5 Fast for estimate.
+Each Task prompt includes: the specialist skill path, the matching role YAML under `.agents/skills/qa-test-writer/roles/`, **one** stack file name from the write-tests list, and the slug.
 
 ## Pipeline (mixed / ticket)
 

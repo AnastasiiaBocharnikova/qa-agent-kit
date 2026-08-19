@@ -14,13 +14,7 @@ Read this skill only when the kit router or `qa-orchestrator` selected test-qual
 
 This output is a **briefing** for the operator. A `pass` verdict does not close the human gate.
 
-## Model
-
-- capability_tier: `balanced`
-- reasoning_effort: `medium`
-- resolved_target: Grok 4.6
-- Escalate to balanced/high only for auth, money/checkout, leftover-data, or LambdaTest-only flake. Flagship/medium only after balanced missed a high-impact gap.
-- Role: [test-quality-reviewer.md](../qa-test-writer/roles/test-quality-reviewer.md) — same envelope as this skill. Orchestrator spawn only.
+Role: [test-quality-reviewer.md](../qa-test-writer/roles/test-quality-reviewer.md). Orchestrator spawn only.
 
 ## Steps
 

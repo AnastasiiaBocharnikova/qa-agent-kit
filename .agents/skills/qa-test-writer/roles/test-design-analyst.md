@@ -5,9 +5,6 @@ Use when the parent session should delegate case design, not implement tests.
 ```yaml
 id: test-design-analyst
 role: analysis
-capability_tier: balanced
-reasoning_effort: medium
-resolved_target: Grok 4.6
 write_authority: docs/qa/<slug>/test-cases.md
 outputs:
   - docs/qa/<slug>/test-cases.md
@@ -22,5 +19,4 @@ constraints:
   - do not invent product IDs, course keys, or ISBNs; list what the operator must provide
   - do not duplicate the same journey across Cypress and Selenium without a product reason
   - output is a draft until the operator approves; do not spawn further sub-agents
-  - do not use flagship or max reasoning for this role
 ```

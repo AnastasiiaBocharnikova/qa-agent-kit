@@ -13,12 +13,7 @@ Use this skill only for a **case list without implementation**. When writing tes
 
 Read this skill only when the kit selected test design (no code), or when `qa-orchestrator` dispatched this specialist. Outputs are **drafts** until the operator approves. Do not spawn sub-agents; the parent orchestrator decides.
 
-## Model
-
-- capability_tier: `balanced`
-- reasoning_effort: `medium`
-- resolved_target: Grok 4.6
-- Role: [test-design-analyst.md](../qa-test-writer/roles/test-design-analyst.md) uses the same envelope. Do not escalate to flagship for case lists.
+Role: [test-design-analyst.md](../qa-test-writer/roles/test-design-analyst.md)
 
 ## Steps
 

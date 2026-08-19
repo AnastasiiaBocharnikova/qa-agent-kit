@@ -11,12 +11,7 @@ disable-model-invocation: true
 
 Read this skill only when the kit router or `qa-orchestrator` selected estimation. Outputs are **drafts** until the operator approves.
 
-## Model
-
-- capability_tier: `fast/economy`
-- reasoning_effort: `low`
-- resolved_target: Composer 2.5 Fast
-- Role: [qa-estimate-advisor.md](../qa-test-writer/roles/qa-estimate-advisor.md) uses the same envelope. Do not use Grok/flagship for an S/M/L table.
+Role: [qa-estimate-advisor.md](../qa-test-writer/roles/qa-estimate-advisor.md)
 
 ## Steps
 
