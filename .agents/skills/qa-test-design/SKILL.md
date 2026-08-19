@@ -11,14 +11,14 @@ disable-model-invocation: true
 
 Use this skill only for a **case list without implementation**. When writing tests or doing TDD, use the root `qa-agent-kit` skill instead and load one stack file.
 
-Read this skill only when the kit selected test design (no code).
+Read this skill only when the kit selected test design (no code), or when `qa-orchestrator` dispatched this specialist. Outputs are **drafts** until the operator approves. Do not spawn sub-agents; the parent orchestrator decides.
 
 ## Model
 
 - capability_tier: `balanced`
 - reasoning_effort: `medium`
 - resolved_target: Grok 4.6
-- Sub-agent: [test-design-analyst.md](../qa-agent-kit/roles/test-design-analyst.md) uses the same envelope. Do not escalate to flagship for case lists.
+- Role: [test-design-analyst.md](../qa-agent-kit/roles/test-design-analyst.md) uses the same envelope. Do not escalate to flagship for case lists.
 
 ## Steps
 
@@ -27,8 +27,8 @@ Read this skill only when the kit selected test design (no code).
 3. List risks: input boundaries, rules, states, personas, auth, money, leftover data.
 4. Pick techniques from [test-design.md](../qa-agent-kit/references/test-design.md). Do not apply every technique.
 5. Assign layer, surface, stack, suite_tag, and run_target using [test-layers.md](../qa-agent-kit/references/test-layers.md). Load **one** stack file from the write-tests skill table (Jest, Cypress, Playwright, backend unit, Pact, deployment, or Selenium).
-6. Write `docs/qa/<slug>/test-cases.md` from [test-cases.md](../qa-agent-kit/assets/templates/test-cases.md).
-7. Stop. Do not implement tests unless the operator asked.
+6. Write `docs/qa/<slug>/test-cases.md` from [test-cases.md](../qa-agent-kit/assets/templates/test-cases.md). Mark it draft.
+7. Stop. Do not implement tests unless the operator asked. Wait for operator approval before treating the list as final.
 
 ## Rules
 
@@ -36,4 +36,4 @@ Read this skill only when the kit selected test design (no code).
 - Every live UI e2e case must say why Jest/API/Cypress-int cannot prove it.
 - Put tests in the repo that owns the layer (UI vs BFF vs Selenium suite). Do not duplicate the same journey in Cypress and Selenium without a product reason.
 - Default run target follows the profile (Jest/JUnit: local+CI; Selenium smoke: local and LambdaTest).
-- If a sub-agent would help, use [test-design-analyst.md](../qa-agent-kit/roles/test-design-analyst.md).
+- Draft until operator approval. The parent orchestrator owns Task spawn.

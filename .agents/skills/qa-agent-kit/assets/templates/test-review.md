@@ -5,10 +5,11 @@
 - Repo profile: ui-frontend | api-backend | ui-selenium | mixed
 - Stacks seen: `<jest-rtl, cypress, playwright, junit, pact, rest-assured, java-selenium, …>`
 - Environments: local | CI | LambdaTest | post-deploy | unknown
+- Human gate: pending | approved
 
 ## Verdict
 
-`<pass with nits` | `should-fix` | `block>`
+`<pass with nits` | `should-fix` | `block>` (agent briefing only; does not close the human gate)
 
 ## Findings
 

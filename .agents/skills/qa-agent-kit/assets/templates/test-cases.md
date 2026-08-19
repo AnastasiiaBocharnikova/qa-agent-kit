@@ -4,6 +4,7 @@
 - Behavior: `<one sentence>`
 - Repo profile: ui-frontend | api-backend | ui-selenium | mixed (`<repos>`)
 - Sources: `<ticket, spec, or diff>`
+- Status: draft | approved
 
 | ID | Case | Technique | Layer | Surface | Stack | Suite tag | Run target | Auto / manual | Priority |
 |---|---|---|---|---|---|---|---|---|---|

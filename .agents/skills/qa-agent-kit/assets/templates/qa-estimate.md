@@ -3,6 +3,7 @@
 - Work slug: `<ticket-or-slug>`
 - Change: `<one sentence>`
 - Target repo(s): `<fx-ui / fx-bff / stx-e2e-tests / other>`
+- Status: draft | approved
 
 | Bucket | Size (S/M/L) | Reason |
 |---|---|---|

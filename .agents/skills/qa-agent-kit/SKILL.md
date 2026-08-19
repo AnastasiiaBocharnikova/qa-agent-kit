@@ -12,6 +12,8 @@ Load this skill **every time tests are written**. Under TDD that is every red–
 
 Do not load Cypress, JUnit, deployment, or Selenium files until this file says to. Do not load review or effort skills while writing tests.
 
+Generated tests are not final without human review. Do not commit, push, or mark merge-ready until the operator says so.
+
 ## Model
 
 - capability_tier: `balanced`
@@ -50,6 +52,7 @@ Unsure which row? Skim [repo-profiles.md](references/repo-profiles.md), then ret
 
 | Activity | Skill | Model |
 |---|---|---|
+| Mixed / “QA this ticket” / write-then-review | `qa-orchestrator` | Composer 2.5 Fast |
 | PR / “are these tests enough” | `qa-test-review` | Grok 4.6 |
 | Ticket estimate only | `qa-effort` | Composer 2.5 Fast |
 | Case list, no implementation | `qa-test-design` | Grok 4.6 |
