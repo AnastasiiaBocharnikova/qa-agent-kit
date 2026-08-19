@@ -17,7 +17,7 @@ LambdaTest tunnel starts automatically when `seleniumserver=lambdatest`.
 
 Branch on `lambdatest` only in the driver factory or grid-only utilities (file download: `lambda-file-exists` / `lambda-file-content`). Set `lambda-name` from the scenario name. Always `quit` so grid sessions do not leak.
 
-A failure only on LambdaTest is still a failure (wait, viewport, tunnel) — do not skip the test locally to hide it. Smoke (`@PreApps`) should be runnable on **both** local and LambdaTest.
+A failure only on LambdaTest is still a failure (wait, viewport, tunnel) — do not skip the test locally to hide it. STX smoke (`@PreApps`) should be runnable on **both** local and LambdaTest.
 
 ## Cypress / Playwright
 
