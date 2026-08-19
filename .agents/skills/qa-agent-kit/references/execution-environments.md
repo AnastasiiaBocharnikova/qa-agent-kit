@@ -28,7 +28,3 @@ A failure only on LambdaTest is still a failure (wait, viewport, tunnel) — do 
 
 - App must be running (`localhost:8080` or `-DbaseUrl=https://….apps.dev.cengage.io`).
 - `mvn test -Ppost-deployment`. Normal `mvn clean install` must not execute smoke/load.
-
-## Other clouds
-
-BrowserStack / Sauce: same rules, different `seleniumserver` value.
