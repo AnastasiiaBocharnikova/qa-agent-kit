@@ -24,7 +24,7 @@ Do not start QA work on a flagship or max-reasoning model. Escalate a **review**
 
 ## Detect stack, then load one file
 
-The write-tests skill’s “Where to look” table is authoritative. Profile cheat sheet: `.agents/skills/qa-agent-kit/references/repo-profiles.md`.
+The write-tests skill’s “Where to look” list is authoritative. Profile cheat sheet: `.agents/skills/qa-agent-kit/references/repo-profiles.md`.
 
 Do not force Java+Selenium onto a React UI repo, or Cypress onto a Java BFF.
 
