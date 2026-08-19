@@ -18,13 +18,6 @@ Do not load Cypress, JUnit, deployment, or Selenium files until this file says t
 
 Generated tests are not final without human review. Do not commit, push, or mark merge-ready until the operator says so.
 
-## Model
-
-- capability_tier: `balanced`
-- reasoning_effort: `medium`
-- resolved_target: Grok 4.6
-- See [model-selection.md](references/model-selection.md) only if escalating.
-
 ## Foundation (stay here)
 
 1. **Lowest layer that can fail for the right reason.** Unit first. Mocked integration next. Live e2e only if a lower layer cannot prove it. Smoke is a short tagged gate, not a copy of regression.
@@ -52,7 +45,7 @@ Unsure which stack? Skim [repo-profiles.md](references/repo-profiles.md), then r
 
 ## Not this skill
 
-- Mixed / “QA this ticket” / write-then-review → `qa-orchestrator` · Composer 2.5 Fast
-- PR / “are these tests enough” → `qa-test-review` · Grok 4.6
-- Ticket estimate only → `qa-estimate` · Composer 2.5 Fast
-- Case list, no implementation → `qa-test-design` · Grok 4.6
+- Mixed / “QA this ticket” / write-then-review → `qa-orchestrator`
+- PR / “are these tests enough” → `qa-test-review`
+- Ticket estimate only → `qa-estimate`
+- Case list, no implementation → `qa-test-design`
