@@ -1,12 +1,20 @@
 # QA Agent Kit
 
-When **writing tests** (TDD: every cycle), load `.agents/skills/qa-agent-kit/SKILL.md` first. It has the shared foundation. Then load **only one** stack file named there (Cypress, Jest, backend unit, deployment, Selenium, …). Do not preload the rest.
+There is **one** orchestrator. The other two files are not dispatchers.
 
-Mixed or ambiguous QA (“QA this ticket”, design + estimate or write, UI + BFF, write-then-review) goes through `.agents/skills/qa-orchestrator/SKILL.md`. That skill classifies and dispatches; it does not write tests.
+| Piece | Job | Not |
+|---|---|---|
+| This `AGENTS.md` | Map: which skill file to open for this request | Does not spawn Task agents, does not write tests |
+| `qa-orchestrator` | Only dispatcher: mixed/ticket work, hybrid spawn, human gate | Does not write tests, design cases, or load stack files |
+| `qa-agent-kit` | Write-tests specialist: foundation + **one** stack index | Not a router. Does not choose design / review / effort |
+
+When **writing tests** (TDD: every cycle), load `.agents/skills/qa-agent-kit/SKILL.md` first. Then load **only one** stack file named there. Do not preload the rest.
+
+Mixed or ambiguous QA (“QA this ticket”, design + estimate or write, UI + BFF, write-then-review) goes through `.agents/skills/qa-orchestrator/SKILL.md`.
 
 This kit is standalone. It does not require Dev Doc Harness. Optional artifacts: `docs/qa/<ticket-or-slug>/`. Artifacts and generated tests are **drafts** until the operator reviews them. Agent `qa-test-review` is a briefing, not the release gate.
 
-## Route
+## Skill map
 
 | Request | Skill | Default model (tier / effort) | Current Cursor mapping |
 |---|---|---|---|

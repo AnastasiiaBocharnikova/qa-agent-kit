@@ -3,10 +3,14 @@ name: qa-agent-kit
 description: >-
   Writes automated tests, including TDD. Use whenever adding or changing tests
   in Jest, Cypress, Playwright, JUnit, Pact, RestAssured, Gatling, or Java
-  Selenium. Load this skill first; then load only the one stack file it names.
+  Selenium. This is the write-tests specialist, not a router. For mixed
+  “QA this ticket” work, use qa-orchestrator. Load this skill first; then
+  load only the one stack file it names.
 ---
 
 # Write tests
+
+This skill **writes tests**. It is not an orchestrator. Mixed or ticket-level QA uses `qa-orchestrator`. The table below is a stack index, not a second dispatcher.
 
 Load this skill **every time tests are written**. Under TDD that is every red–green–refactor cycle.
 

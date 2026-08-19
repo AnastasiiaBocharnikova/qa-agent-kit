@@ -6,10 +6,16 @@ Standalone companion package. It does not depend on Dev Doc Harness. Copy `AGENT
 
 House rules come from **fx-ui**, **fx-bff**, and **stx-e2e-tests**.
 
+## Who does what
+
+- **`AGENTS.md`** — map only. Which skill to open. Not an orchestrator.
+- **`qa-orchestrator`** — the only dispatcher (mixed/ticket, Task spawn, human gate).
+- **`qa-agent-kit`** — write-tests specialist (foundation + one stack file). Not a router.
+
 ## Progressive disclosure
 
 1. Mixed or ambiguous QA (“QA this ticket”, design + write, UI + BFF): load `.agents/skills/qa-orchestrator/SKILL.md`. It classifies and dispatches; it does not write tests.
-2. Always load `.agents/skills/qa-agent-kit/SKILL.md` when writing tests (TDD: every cycle). That file is the shared foundation.
+2. Always load `.agents/skills/qa-agent-kit/SKILL.md` when writing tests (TDD: every cycle). That file is the shared foundation, not a dispatcher.
 3. Load **only one** stack file it names: Jest, Cypress, Playwright, backend unit, Pact, deployment, or Selenium.
 4. Do not load review or effort skills while writing tests.
 
@@ -32,9 +38,9 @@ Merge this repo’s `AGENTS.md` into the product `AGENTS.md`, and copy `.agents/
 ## Layout
 
 ```text
-AGENTS.md                            # when to load write-tests vs orchestrator
-.agents/skills/qa-orchestrator/      # mixed / ticket dispatch + human gate
-.agents/skills/qa-agent-kit/SKILL.md # write-tests foundation + index
+AGENTS.md                            # map: which skill to open (not a dispatcher)
+.agents/skills/qa-orchestrator/      # only dispatcher: mixed / ticket + human gate
+.agents/skills/qa-agent-kit/SKILL.md # write-tests specialist + stack index
 .agents/skills/qa-agent-kit/references/  # one file per stack
 .agents/skills/qa-test-design/
 .agents/skills/qa-test-review/
