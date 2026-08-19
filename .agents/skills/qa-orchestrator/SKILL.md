@@ -10,7 +10,7 @@ disable-model-invocation: true
 
 # QA Orchestrator
 
-This is the **only** dispatcher in the kit. `AGENTS.md` is a map (which skill to open). The `qa-agent-kit` skill writes tests; it does not route.
+This is the **only** dispatcher in the kit. Product `AGENTS.md` gets a short insert (`AGENTS.snippet.md`), not a replacement. The `qa-agent-kit` skill writes tests; it does not route.
 
 Classify, dispatch, stop for a human. Do not write tests, design cases, estimate, or review yourself.
 

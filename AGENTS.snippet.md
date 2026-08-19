@@ -1,8 +1,6 @@
-# QA Agent Kit
-
-This file is for **this repository**. Products copy `.agents/skills/` and paste [AGENTS.snippet.md](AGENTS.snippet.md) into the existing product `AGENTS.md`. Do not replace that file.
-
 ## QA agent kit
+
+Paste into the product `AGENTS.md`. Do not replace that file. The package is `.agents/skills/`.
 
 - Mixed / “QA this ticket” → `qa-orchestrator`
 - Write tests / TDD → `qa-agent-kit`, then one stack file
