@@ -9,14 +9,14 @@ disable-model-invocation: true
 
 # QA Effort
 
-Read this skill only when the kit router selected effort estimation.
+Read this skill only when the kit router or `qa-orchestrator` selected effort estimation. Outputs are **drafts** until the operator approves.
 
 ## Model
 
 - capability_tier: `fast/economy`
 - reasoning_effort: `low`
 - resolved_target: Composer 2.5 Fast
-- Sub-agent: [qa-effort-advisor.md](../qa-agent-kit/roles/qa-effort-advisor.md) uses the same envelope. Do not use Grok/flagship for an S/M/L table.
+- Role: [qa-effort-advisor.md](../qa-agent-kit/roles/qa-effort-advisor.md) uses the same envelope. Do not use Grok/flagship for an S/M/L table.
 
 ## Steps
 
@@ -25,10 +25,10 @@ Read this skill only when the kit router selected effort estimation.
 3. Score the buckets in [qa-effort.md](../qa-agent-kit/references/qa-effort.md): design, automation, exploratory, regression, env/setup.
 4. Call out LambdaTest / CI / post-deploy cost separately from local unit runs.
 5. Name which repo takes the work (UI, BFF, Selenium suite) to avoid duplicates.
-6. Write `docs/qa/<slug>/qa-estimate.md` from [qa-estimate.md](../qa-agent-kit/assets/templates/qa-estimate.md).
+6. Write `docs/qa/<slug>/qa-estimate.md` from [qa-estimate.md](../qa-agent-kit/assets/templates/qa-estimate.md). Mark it draft.
 
 ## Rules
 
 - Use S / M / L plus a one-line reason. Do not invent story points.
 - Env/setup is not free when LambdaTest tunnel, Cypress `.env`, or config-repo values are required.
-- If a sub-agent would help, use [qa-effort-advisor.md](../qa-agent-kit/roles/qa-effort-advisor.md).
+- Draft until operator approval. The parent orchestrator owns Task spawn.

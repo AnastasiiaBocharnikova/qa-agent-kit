@@ -20,5 +20,6 @@ constraints:
   - split local vs CI/LambdaTest/post-deploy in env/setup
   - name which repo takes the test (UI, BFF, Selenium)
   - say if a dedicated test task is needed
+  - output is a draft until the operator approves; do not spawn further sub-agents
   - do not use balanced or flagship for this role
 ```

@@ -10,7 +10,9 @@ disable-model-invocation: true
 
 # QA Test Review
 
-Read this skill only when the kit router selected test-quality review.
+Read this skill only when the kit router or `qa-orchestrator` selected test-quality review.
+
+This output is a **briefing** for the operator. A `pass` verdict does not close the human gate.
 
 ## Model
 
@@ -18,15 +20,15 @@ Read this skill only when the kit router selected test-quality review.
 - reasoning_effort: `medium`
 - resolved_target: Grok 4.6
 - Escalate to balanced/high only for auth, money/checkout, leftover-data, or LambdaTest-only flake. Flagship/medium only after balanced missed a high-impact gap.
-- Sub-agent: [test-quality-reviewer.md](../qa-agent-kit/roles/test-quality-reviewer.md) — same envelope as this skill.
+- Role: [test-quality-reviewer.md](../qa-agent-kit/roles/test-quality-reviewer.md) — same envelope as this skill. Orchestrator spawn only.
 
 ## Steps
 
 1. Name `<slug>`. Inspect the diff, new tests, and test layout.
 2. Classify the repo via [repo-profiles.md](../qa-agent-kit/references/repo-profiles.md).
 3. Review against [review-rubric.md](../qa-agent-kit/references/review-rubric.md) and **one** stack file from the write-tests skill table (Jest, Cypress, Playwright, backend unit, Pact, deployment, Selenium, or local/LambdaTest).
-4. Write `docs/qa/<slug>/test-review.md` from [test-review.md](../qa-agent-kit/assets/templates/test-review.md).
-5. Do not change product or test code unless the operator asked.
+4. Write `docs/qa/<slug>/test-review.md` from [test-review.md](../qa-agent-kit/assets/templates/test-review.md). Set `Human gate: pending`.
+5. Do not change product or test code unless the operator asked. Do not treat this review as final.
 
 ## Findings
 
@@ -37,4 +39,4 @@ Use severity: **blocker**, **should-fix**, **nit**. Each finding needs a file or
 - Missing tests for new behavior is a finding, not a pass.
 - Wrong layer (UI e2e for a mapper; RestAssured in the unit build) is should-fix or blocker.
 - Missing cleanup, leaked driver, or committed secrets is blocker.
-- If a sub-agent would help, use [test-quality-reviewer.md](../qa-agent-kit/roles/test-quality-reviewer.md).
+- Draft until operator approval. This skill cannot close the human gate. The parent orchestrator owns Task spawn.

@@ -20,5 +20,6 @@ constraints:
   - apply techniques from references/test-design.md
   - assign layer, surface, stack, suite_tag, run_target
   - do not duplicate the same journey across Cypress and Selenium without a product reason
+  - output is a draft until the operator approves; do not spawn further sub-agents
   - do not use flagship or max reasoning for this role
 ```
