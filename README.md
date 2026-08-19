@@ -23,13 +23,11 @@ Agent outputs are drafts. **Final** exists only after a human reviews them. `qa-
 
 ## Other skills
 
-| Request | Skill | Model |
-|---|---|---|
-| Mixed / “QA this ticket” | `qa-orchestrator` | Composer 2.5 Fast |
-| Writing tests / TDD | `qa-agent-kit` | Grok 4.6 |
-| Case list only | `qa-test-design` | Grok 4.6 |
-| PR review | `qa-test-review` | Grok 4.6 |
-| Estimate | `qa-effort` | Composer 2.5 Fast |
+- Mixed / “QA this ticket” → `qa-orchestrator` · Composer 2.5 Fast
+- Writing tests / TDD → `qa-agent-kit` · Grok 4.6
+- Case list only → `qa-test-design` · Grok 4.6
+- PR review → `qa-test-review` · Grok 4.6
+- Estimate → `qa-effort` · Composer 2.5 Fast
 
 ## Install
 

@@ -2,11 +2,9 @@
 
 There is **one** orchestrator. The other two files are not dispatchers.
 
-| Piece | Job | Not |
-|---|---|---|
-| This `AGENTS.md` | Map: which skill file to open for this request | Does not spawn Task agents, does not write tests |
-| `qa-orchestrator` | Only dispatcher: mixed/ticket work, hybrid spawn, human gate | Does not write tests, design cases, or load stack files |
-| `qa-agent-kit` | Write-tests specialist: foundation + **one** stack index | Not a router. Does not choose design / review / effort |
+- **`AGENTS.md`** (this file) — map: which skill to open. Does not spawn Task agents or write tests.
+- **`qa-orchestrator`** — only dispatcher (mixed/ticket, hybrid spawn, human gate). Does not write tests or load stack files.
+- **`qa-agent-kit`** — write-tests specialist: foundation + one stack index. Not a router; does not choose design / review / effort.
 
 When **writing tests** (TDD: every cycle), load `.agents/skills/qa-agent-kit/SKILL.md` first. Then load **only one** stack file named there. Do not preload the rest.
 
@@ -16,13 +14,11 @@ This kit is standalone. It does not require Dev Doc Harness. Optional artifacts:
 
 ## Skill map
 
-| Request | Skill | Default model (tier / effort) | Current Cursor mapping |
-|---|---|---|---|
-| Mixed / ambiguous / “QA this ticket” | `qa-orchestrator` | fast/economy / low | Composer 2.5 Fast |
-| Writing tests / TDD | `qa-agent-kit` (write-tests root) | balanced / medium | Grok 4.6 |
-| Case list only, no implementation | `qa-test-design` | balanced / medium | Grok 4.6 |
-| PR, “are these tests good enough” | `qa-test-review` | balanced / medium | Grok 4.6 |
-| Ticket estimate, plan split | `qa-effort` | fast/economy / low | Composer 2.5 Fast |
+- Mixed / “QA this ticket” → `qa-orchestrator` · Composer 2.5 Fast (fast/economy, low)
+- Writing tests / TDD → `qa-agent-kit` · Grok 4.6 (balanced, medium)
+- Case list only → `qa-test-design` · Grok 4.6 (balanced, medium)
+- PR / “are these tests good enough” → `qa-test-review` · Grok 4.6 (balanced, medium)
+- Ticket estimate → `qa-effort` · Composer 2.5 Fast (fast/economy, low)
 
 Do not start QA work on a flagship or max-reasoning model. Escalate a **review** to balanced/high only for auth, money/checkout, leftover data, or LambdaTest-only flake. Full table: `.agents/skills/qa-agent-kit/references/model-selection.md`.
 

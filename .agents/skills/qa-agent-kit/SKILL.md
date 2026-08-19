@@ -10,7 +10,7 @@ description: >-
 
 # Write tests
 
-This skill **writes tests**. It is not an orchestrator. Mixed or ticket-level QA uses `qa-orchestrator`. The table below is a stack index, not a second dispatcher.
+This skill **writes tests**. It is not an orchestrator. Mixed or ticket-level QA uses `qa-orchestrator`. The list below is a stack index, not a second dispatcher.
 
 Load this skill **every time tests are written**. Under TDD that is every red–green–refactor cycle.
 
@@ -38,25 +38,21 @@ Generated tests are not final without human review. Do not commit, push, or mark
 
 Match the file you are about to edit, then stop.
 
-| You are writing… | Load only |
-|---|---|
-| Jest / RTL (`*.test.ts(x)`) | [ui-unit.md](references/ui-unit.md) |
-| Cypress (`cypress/`, `CYPRESS_TYPE`) | [cypress.md](references/cypress.md) |
-| Playwright (`playwright/`) | [playwright.md](references/playwright.md) |
-| JUnit / Mockito / WireMock in `impl` or `app` tests | [backend-unit.md](references/backend-unit.md) |
-| Pact (`contract-tests`) | [contract-pact.md](references/contract-pact.md) |
-| Post-deploy smoke / regression / load (`deployment-tests`) | [deployment.md](references/deployment.md) |
-| Java Selenium / Cucumber | [java-selenium.md](references/java-selenium.md) |
-| `local` vs LambdaTest vs CI wiring | [execution-environments.md](references/execution-environments.md) |
-| Technique choice (EP, BVA, personas) — optional | [test-design.md](references/test-design.md) |
+- Jest / RTL (`*.test.ts(x)`) → [ui-unit.md](references/ui-unit.md)
+- Cypress (`cypress/`, `CYPRESS_TYPE`) → [cypress.md](references/cypress.md)
+- Playwright (`playwright/`) → [playwright.md](references/playwright.md)
+- JUnit / Mockito / WireMock in `impl` or `app` tests → [backend-unit.md](references/backend-unit.md)
+- Pact (`contract-tests`) → [contract-pact.md](references/contract-pact.md)
+- Post-deploy smoke / regression / load (`deployment-tests`) → [deployment.md](references/deployment.md)
+- Java Selenium / Cucumber → [java-selenium.md](references/java-selenium.md)
+- `local` vs LambdaTest vs CI wiring → [execution-environments.md](references/execution-environments.md)
+- Technique choice (EP, BVA, personas) — optional → [test-design.md](references/test-design.md)
 
-Unsure which row? Skim [repo-profiles.md](references/repo-profiles.md), then return to this table.
+Unsure which stack? Skim [repo-profiles.md](references/repo-profiles.md), then return to this list.
 
 ## Not this skill
 
-| Activity | Skill | Model |
-|---|---|---|
-| Mixed / “QA this ticket” / write-then-review | `qa-orchestrator` | Composer 2.5 Fast |
-| PR / “are these tests enough” | `qa-test-review` | Grok 4.6 |
-| Ticket estimate only | `qa-effort` | Composer 2.5 Fast |
-| Case list, no implementation | `qa-test-design` | Grok 4.6 |
+- Mixed / “QA this ticket” / write-then-review → `qa-orchestrator` · Composer 2.5 Fast
+- PR / “are these tests enough” → `qa-test-review` · Grok 4.6
+- Ticket estimate only → `qa-effort` · Composer 2.5 Fast
+- Case list, no implementation → `qa-test-design` · Grok 4.6

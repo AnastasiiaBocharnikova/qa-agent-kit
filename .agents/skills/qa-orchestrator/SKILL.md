@@ -32,11 +32,9 @@ Single write / TDD: stop routing. Tell the parent to load `qa-agent-kit` plus on
 
 Stay in this chat when there is **one** specialist and no independence need:
 
-| Intent | Load only |
-|---|---|
-| design only | `qa-test-design` |
-| effort only | `qa-effort` |
-| review this PR only | `qa-test-review` |
+- design only → `qa-test-design`
+- effort only → `qa-effort`
+- review this PR only → `qa-test-review`
 
 Spawn a Cursor Task `generalPurpose` subagent when isolation buys something:
 
