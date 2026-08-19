@@ -26,7 +26,7 @@ Generated tests are not final without human review. Do not commit, push, or mark
 1. **Lowest layer that can fail for the right reason.** Unit first. Mocked integration next. Live e2e only if a lower layer cannot prove it. Smoke is a short tagged gate, not a copy of regression.
 2. **TDD:** failing test at that layer → minimal code → refactor. Do not write production code without a failing test unless the operator said otherwise.
 3. **Locators:** shared `data-testid` / testID modules. No new absolute XPath. No `Thread.sleep` / `cy.wait(ms)`.
-4. **Data:** seed and delete via API. Screenshot on UI failure; quit WebDriver. No secrets in git.
+4. **Data:** seed and delete via API. Do not invent product IDs, course keys, ISBNs, entitlements, or other environment-specific values. If a real one is required, **STOP and ask the operator** to provide it. Screenshot on UI failure; quit WebDriver. No secrets in git.
 5. **Tags:** use the repo’s own suite names. fx-ui: Cypress persona folders and Playwright/Cypress `smoke`. fx-bff: JUnit `@Tag`, post-deploy modules. **stx-e2e-tests only:** `@PreApps` (smoke), `@coreTest` (regression), `@PostApps` (prod, non-invasive). Do not copy STX tags into other repos.
 6. **One repo, one stack.** Do not add Selenium to a Jest/Cypress app or Cypress to a Java BFF. Do not duplicate the same journey in two e2e tools.
 

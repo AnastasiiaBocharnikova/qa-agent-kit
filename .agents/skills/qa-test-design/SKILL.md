@@ -27,8 +27,8 @@ Read this skill only when the kit selected test design (no code), or when `qa-or
 3. List risks: input boundaries, rules, states, personas, auth, money, leftover data.
 4. Pick techniques from [test-design.md](../qa-agent-kit/references/test-design.md). Do not apply every technique.
 5. Assign layer, surface, stack, suite_tag, and run_target using [test-layers.md](../qa-agent-kit/references/test-layers.md). Load **one** stack file from the write-tests skill table (Jest, Cypress, Playwright, backend unit, Pact, deployment, or Selenium).
-6. Write `docs/qa/<slug>/test-cases.md` from [test-cases.md](../qa-agent-kit/assets/templates/test-cases.md). Mark it draft.
-7. Stop. Do not implement tests unless the operator asked. Wait for operator approval before treating the list as final.
+6. Write `docs/qa/<slug>/test-cases.md` from [test-cases.md](../qa-agent-kit/assets/templates/test-cases.md). Mark it draft. List any product, course key, ISBN, or catalog value the operator must provide. Leave those cells empty rather than inventing them.
+7. Stop. Do not implement tests unless the operator asked. Wait for operator approval before treating the list as final. If required test data is missing, ask for it in the same stop.
 
 ## Rules
 
@@ -36,4 +36,5 @@ Read this skill only when the kit selected test design (no code), or when `qa-or
 - Every live UI e2e case must say why Jest/API/Cypress-int cannot prove it.
 - Put tests in the repo that owns the layer (UI vs BFF vs Selenium suite). Do not duplicate the same journey in Cypress and Selenium without a product reason.
 - Default run target follows the profile (Jest/JUnit: local+CI; Selenium smoke: local and LambdaTest).
+- Do not invent product IDs, course keys, or ISBNs. Ask the operator for the correct value.
 - Draft until operator approval. The parent orchestrator owns Task spawn.
