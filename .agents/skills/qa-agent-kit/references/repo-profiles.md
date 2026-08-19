@@ -31,7 +31,7 @@ Do not put RestAssured smoke into the unit module. Load one file: [backend-unit.
 
 ## ui-selenium (example: stx-e2e-tests)
 
-**Signals:** Cucumber `src/test/resources/features`; page objects; `Config.properties` `seleniumserver`; dependency `selenium-core`; tags `@PreApps` `@PostApps` `@coreTest`.
+**Signals:** Cucumber `src/test/resources/features`; page objects; `Config.properties` `seleniumserver`; dependency `selenium-core`. Suite tags `@PreApps` / `@PostApps` / `@coreTest` belong to **this repo only**.
 
 | Layer | How it looks here |
 |---|---|

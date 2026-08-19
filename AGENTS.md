@@ -26,7 +26,7 @@ Do not force Java+Selenium onto a React UI repo, or Cypress onto a Java BFF.
 These sit in the root skill so they load every time tests are written:
 
 1. Lowest layer first (unit → mocked integration → live e2e → short smoke).
-2. Suite tags: `@PreApps` / `@coreTest` / `@PostApps`; Cypress persona folders; JUnit `@Tag`; post-deploy not in `mvn clean install`.
+2. Suite tags from **that repo**: Cypress persona folders / Playwright `smoke`; JUnit `@Tag`; post-deploy not in `mvn clean install`. `@PreApps` / `@coreTest` / `@PostApps` exist only in **stx-e2e-tests**, not in fx-ui or fx-bff.
 3. Shared `data-testid` / testID modules. No new absolute XPath. No `Thread.sleep`.
 4. API seed and cleanup. Screenshot on UI fail; quit WebDriver. No secrets in git.
 5. Cypress intercepts = integration, not a substitute for live smoke. API smoke = status + JSON schema.

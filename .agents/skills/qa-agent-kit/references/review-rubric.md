@@ -20,7 +20,7 @@ Review the **diff of tests** (and missing tests for new behavior). First apply [
 - New fields on a downstream call have a pact update
 - Broker publish path unchanged unless the ticket is about the broker
 
-## E2E (Cypress live / Selenium `@coreTest`)
+## E2E (Cypress live / STX Selenium `@coreTest`)
 
 - Journey, not a click-through of every control
 - Locators: `data-testid` / testID module
@@ -30,10 +30,10 @@ Review the **diff of tests** (and missing tests for new behavior). First apply [
 
 ## Smoke
 
-- Short and tagged (`smoke`, `@PreApps`, Playwright project `smoke`)
+- Short and tagged (`smoke`, Playwright project `smoke`; STX only: `@PreApps`)
 - Runnable locally and on the grid/CI target used in Jenkins
 - API smoke: schema + cleanup + tags for optional collaborators
-- `@PostApps` / prod: non-invasive (no leftover purchases, no unpaid orders)
+- STX `@PostApps` / prod: non-invasive (no leftover purchases). Other repos: keep prod smoke equally non-invasive without those tag names.
 
 ## Cross-cutting
 

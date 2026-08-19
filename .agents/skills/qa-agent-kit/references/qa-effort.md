@@ -7,7 +7,7 @@ Estimate in S / M / L with a reason. Not story points.
 | Design | Few cases, one technique | Several rules, personas, or states | Combinations across UI+API+e2e repos |
 | Automation | Extend existing Jest/JUnit/spec | New page object, Cypress persona, Pact, or schema | New framework, grid matrix, or flaky UI area |
 | Exploratory | One pass of the happy path | Edge + adjacent persona | Cross-product (UI + BFF + Selenium) |
-| Regression | Existing suite/tags enough | Extra `@PreApps`/smoke or a Cypress folder | Core auth, money, checkout, shared dashboard |
+| Regression | Existing suite/tags enough | Extra smoke or a Cypress folder (STX: extra `@PreApps`) | Core auth, money, checkout, shared dashboard |
 | Env / setup | Local unit only | LambdaTest or post-deploy already wired | New tunnel, credentials, browser matrix, new `baseUrl` |
 
 Always split **local** vs **LambdaTest/CI** when UI automation is in scope: grid slots, tunnel, Cypress/Playwright CI retries, flake.

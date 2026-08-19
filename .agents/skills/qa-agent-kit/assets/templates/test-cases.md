@@ -7,7 +7,7 @@
 
 | ID | Case | Technique | Layer | Surface | Stack | Suite tag | Run target | Auto / manual | Priority |
 |---|---|---|---|---|---|---|---|---|---|
-| TC-001 | `<what to prove>` | `<technique>` | unit \| integration \| contract \| e2e \| smoke \| load | ui \| api \| cli | `<stack>` | `<@PreApps, smoke, …>` | local \| ci \| lambdatest \| both | auto \| manual | P0 \| P1 \| P2 |
+| TC-001 | `<what to prove>` | `<technique>` | unit \| integration \| contract \| e2e \| smoke \| load | ui \| api \| cli | `<stack>` | `<smoke, persona folder, STX @PreApps, …>` | local \| ci \| lambdatest \| both | auto \| manual | P0 \| P1 \| P2 |
 
 ## Notes
 

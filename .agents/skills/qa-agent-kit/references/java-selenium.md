@@ -9,7 +9,7 @@ Applies to **ui-selenium** repos (stx-e2e-tests, same family as cs-admin-e2e-tes
 - **Stepdefs** glue Gherkin to pages. Pass data with `Context.set/get` (user/course helpers). Do not call `WebDriverFactory.getDriver()` from pages/stepdefs (legacy; do not add new calls).
 - **Browser** class owns tabs, windows, `switchTo`, navigation.
 - **YAML** per tier: `QA_TestData.yml`, `PROD_TestData.yml`, … Gherkin `{key}` resolves via the parameter transformer. Keep new keys in the right tier file.
-- Feature files under `src/test/resources/features`. Tags:
+- Feature files under `src/test/resources/features`. **These Cucumber tags are stx-e2e-tests only** (not fx-ui / fx-bff):
   - `@PreApps` — smoke / most-used happy paths
   - `@coreTest` — regression
   - `@PostApps` — production, non-invasive

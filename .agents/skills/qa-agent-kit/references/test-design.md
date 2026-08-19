@@ -11,7 +11,7 @@ Pick the smallest set that matches the change. Name the technique on each case.
 | Pairwise | Many independent filters (search facets) | API search tests first; one UI check for the control |
 | Error guessing | Past bugs, env-only failures (`@ignoreDev`) | any; prefer unit/API |
 | Persona / role | Product has auth, visitor, TA, restricted, EMEA | Cypress persona folders; YAML user types in Selenium |
-| Use case / happy path | One proof the feature works | one smoke (`@PreApps` or Playwright smoke), not five UI copies |
+| Use case / happy path | One proof the feature works | one smoke (Playwright/Cypress `smoke`, or STX `@PreApps`), not five UI copies |
 
 ## Product-specific cues
 
