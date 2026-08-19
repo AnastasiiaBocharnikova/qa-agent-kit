@@ -16,7 +16,7 @@ inputs:
   - repo-profiles.md classification
   - existing tests (layout only)
 constraints:
-  - classify ui-frontend vs api-backend vs ui-selenium first
+  - load one stack file from the write-tests skill table, not ui-frontend.md or api-backend.md as a whole
   - apply techniques from references/test-design.md
   - assign layer, surface, stack, suite_tag, run_target
   - do not duplicate the same journey across Cypress and Selenium without a product reason

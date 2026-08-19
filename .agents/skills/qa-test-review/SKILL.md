@@ -24,7 +24,7 @@ Read this skill only when the kit router selected test-quality review.
 
 1. Name `<slug>`. Inspect the diff, new tests, and test layout.
 2. Classify the repo via [repo-profiles.md](../qa-agent-kit/references/repo-profiles.md).
-3. Review against [review-rubric.md](../qa-agent-kit/references/review-rubric.md) and the matching stack file: [ui-frontend.md](../qa-agent-kit/references/ui-frontend.md), [api-backend.md](../qa-agent-kit/references/api-backend.md), [java-selenium.md](../qa-agent-kit/references/java-selenium.md), [execution-environments.md](../qa-agent-kit/references/execution-environments.md).
+3. Review against [review-rubric.md](../qa-agent-kit/references/review-rubric.md) and **one** stack file from the write-tests skill table (Jest, Cypress, Playwright, backend unit, Pact, deployment, Selenium, or local/LambdaTest).
 4. Write `docs/qa/<slug>/test-review.md` from [test-review.md](../qa-agent-kit/assets/templates/test-review.md).
 5. Do not change product or test code unless the operator asked.
 

@@ -15,8 +15,8 @@ Pick the smallest set that matches the change. Name the technique on each case.
 
 ## Product-specific cues
 
-- **fx-ui:** If it is render/state/analytics, write Jest. If it is a page with HTTP, prefer Cypress integration + fixture. If it is login, library, create course — extend smoke and add cleanup.
-- **fx-bff:** Endpoint/mapper/strategy → JUnit. Downstream HTTP → WireMock. Cross-service shape → Pact. “Does QA/stage still work?” → RestAssured smoke + schema, with `@Tag` if a collaborator may be down.
-- **stx-e2e:** New student journey → feature file + page object + `@coreTest`. If it is the main happy path, also `@PreApps`. If it must run in production, `@PostApps` and keep it non-invasive (no leftover purchases).
+- **fx-ui:** If it is render/state/analytics, write Jest ([ui-unit.md](ui-unit.md)). If it is a page with HTTP, prefer Cypress integration ([cypress.md](cypress.md)). If it is login, library, create course — extend smoke ([playwright.md](playwright.md) or Cypress smoke) and add cleanup.
+- **fx-bff:** Endpoint/mapper/strategy → [backend-unit.md](backend-unit.md). Downstream HTTP → WireMock in that file. Cross-service shape → [contract-pact.md](contract-pact.md). “Does QA/stage still work?” → [deployment.md](deployment.md).
+- **stx-e2e:** New student journey → [java-selenium.md](java-selenium.md). Happy path also `@PreApps`. Production `@PostApps` and keep it non-invasive.
 
 Do not add a Selenium scenario that only re-checks an API contract. Do not add Cypress e2e that only re-checks a Jest assertion.

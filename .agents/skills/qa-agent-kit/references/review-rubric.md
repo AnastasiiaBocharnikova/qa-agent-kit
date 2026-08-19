@@ -1,6 +1,6 @@
 # Test-quality review rubric
 
-Review the **diff of tests** (and missing tests for new behavior). First apply [repo-profiles.md](repo-profiles.md), then this rubric plus the stack file (`ui-frontend.md`, `api-backend.md`, `java-selenium.md`).
+Review the **diff of tests** (and missing tests for new behavior). First apply [repo-profiles.md](repo-profiles.md), then this rubric plus **one** stack file from the write-tests skill table (`ui-unit.md`, `cypress.md`, `playwright.md`, `backend-unit.md`, `contract-pact.md`, `deployment.md`, `java-selenium.md`).
 
 ## Unit (Jest / JUnit)
 

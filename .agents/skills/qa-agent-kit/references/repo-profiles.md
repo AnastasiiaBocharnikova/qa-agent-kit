@@ -13,7 +13,7 @@ Classify the open repository before designing or reviewing tests.
 | e2e | `CYPRESS_TYPE=e2e` — live app (`baseUrl`), real BFF. Suites split by **persona**: AuthUser, NonAuthUser, TeacherAssistant, Restricted, Visitor, Suspended, EMEA, NonUs. |
 | smoke | `cypress/e2e/smoke/*` and `playwright/smoke/*`. Auth via API token → `storageState`. Seed/cleanup entitlements and courses with `cy.request` / Playwright `request`. CI: retries on, `forbidOnly`. |
 
-Do not add Selenium here. Prefer a Jest test for component state; Cypress integration for page+mocked API; one Playwright/Cypress smoke path for the critical journey.
+Do not add Selenium here. Load one file from the root skill table: [ui-unit.md](ui-unit.md), [cypress.md](cypress.md), or [playwright.md](playwright.md).
 
 ## api-backend (example: fx-bff)
 
@@ -27,7 +27,7 @@ Do not add Selenium here. Prefer a Jest test for component state; Cypress integr
 | smoke / regression | RestAssured against a **running** instance. **Not** run in a normal build — activate `post-deployment`. Assert status + JSON schema. `@Tag` for optional collaborators (`pdm`, `olr`, `crp`, `adonis`). Cleanup extension for created courses. Config from system properties / config-repo. |
 | load | Gatling `simulationClass`, `maxUsers` / ramp / sustained. Also post-deployment only. |
 
-Do not put RestAssured smoke into the unit module. Do not skip schema checks.
+Do not put RestAssured smoke into the unit module. Load one file: [backend-unit.md](backend-unit.md), [contract-pact.md](contract-pact.md), or [deployment.md](deployment.md).
 
 ## ui-selenium (example: stx-e2e-tests)
 

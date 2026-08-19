@@ -1,16 +1,17 @@
 ---
 name: qa-test-design
 description: >-
-  Applies test-design techniques and writes a layered test-case list for new or
-  changed behavior. Use when covering a feature with tests, planning QA for a
-  ticket, or choosing Jest, Cypress, Playwright, JUnit, Pact, RestAssured, or
-  Java Selenium layers.
+  Writes a layered test-case list without implementing tests. Use when the
+  operator wants cases only, not TDD or test code. For writing tests, use
+  qa-agent-kit instead.
 disable-model-invocation: true
 ---
 
 # QA Test Design
 
-Read this skill only when the kit router selected test design.
+Use this skill only for a **case list without implementation**. When writing tests or doing TDD, use the root `qa-agent-kit` skill instead and load one stack file.
+
+Read this skill only when the kit selected test design (no code).
 
 ## Model
 
@@ -22,10 +23,10 @@ Read this skill only when the kit router selected test design.
 ## Steps
 
 1. Name `<slug>` and the behavior. Read the ticket, spec, or behavior diff.
-2. Classify the repo via [repo-profiles.md](../qa-agent-kit/references/repo-profiles.md) (`ui-frontend`, `api-backend`, `ui-selenium`, or mixed).
+2. Classify the repo via [repo-profiles.md](../qa-agent-kit/references/repo-profiles.md).
 3. List risks: input boundaries, rules, states, personas, auth, money, leftover data.
 4. Pick techniques from [test-design.md](../qa-agent-kit/references/test-design.md). Do not apply every technique.
-5. Assign layer, surface, stack, suite_tag, and run_target using [test-layers.md](../qa-agent-kit/references/test-layers.md). Load only the stack file you need: [ui-frontend.md](../qa-agent-kit/references/ui-frontend.md), [api-backend.md](../qa-agent-kit/references/api-backend.md), [java-selenium.md](../qa-agent-kit/references/java-selenium.md), [execution-environments.md](../qa-agent-kit/references/execution-environments.md).
+5. Assign layer, surface, stack, suite_tag, and run_target using [test-layers.md](../qa-agent-kit/references/test-layers.md). Load **one** stack file from the write-tests skill table (Jest, Cypress, Playwright, backend unit, Pact, deployment, or Selenium).
 6. Write `docs/qa/<slug>/test-cases.md` from [test-cases.md](../qa-agent-kit/assets/templates/test-cases.md).
 7. Stop. Do not implement tests unless the operator asked.
 

@@ -1,67 +1,55 @@
 ---
 name: qa-agent-kit
 description: >-
-  Routes QA work to test design, test-quality review, or QA effort estimation.
-  Use when covering new behavior with tests, reviewing unit/integration/e2e/smoke
-  tests for UI or API (Jest, Cypress, Playwright, JUnit, Pact, RestAssured,
-  Java Selenium), or when tests run locally, on CI, or on LambdaTest.
+  Writes automated tests, including TDD. Use whenever adding or changing tests
+  in Jest, Cypress, Playwright, JUnit, Pact, RestAssured, Gatling, or Java
+  Selenium. Load this skill first; then load only the one stack file it names.
 ---
 
-# QA Agent Kit
+# Write tests
 
-Standalone QA skill router. Not part of Dev Doc Harness.
+Load this skill **every time tests are written**. Under TDD that is every red–green–refactor cycle.
+
+Do not load Cypress, JUnit, deployment, or Selenium files until this file says to. Do not load review or effort skills while writing tests.
 
 ## Model
 
-- capability_tier: `fast/economy`
-- reasoning_effort: `low`
-- resolved_target: Composer 2.5 Fast
-- See [model-selection.md](references/model-selection.md). Do not keep the session on a flagship model just to route.
+- capability_tier: `balanced`
+- reasoning_effort: `medium`
+- resolved_target: Grok 4.6
+- See [model-selection.md](references/model-selection.md) only if escalating.
 
-## 1. Detect profile
+## Foundation (stay here)
 
-Read [repo-profiles.md](references/repo-profiles.md) and classify the open repo as `ui-frontend`, `api-backend`, `ui-selenium`, or mixed. Follow that profile’s stacks. Do not invent a second framework.
+1. **Lowest layer that can fail for the right reason.** Unit first. Mocked integration next. Live e2e only if a lower layer cannot prove it. Smoke is a short tagged gate, not a copy of regression.
+2. **TDD:** failing test at that layer → minimal code → refactor. Do not write production code without a failing test unless the operator said otherwise.
+3. **Locators:** shared `data-testid` / testID modules. No new absolute XPath. No `Thread.sleep` / `cy.wait(ms)`.
+4. **Data:** seed and delete via API. Screenshot on UI failure; quit WebDriver. No secrets in git.
+5. **Tags:** smoke vs regression vs prod (`@PreApps` / `@coreTest` / `@PostApps`; Cypress persona folders; JUnit `@Tag`). Prod tests stay non-invasive.
+6. **One repo, one stack.** Do not add Selenium to a Jest/Cypress app or Cypress to a Java BFF. Do not duplicate the same journey in two e2e tools.
 
-## 2. Route
+## Where to look (load **one** file)
 
-Pick **one** skill unless the operator asked for more than one:
+Match the file you are about to edit, then stop.
 
-| Request | Skill | Artifact | Model |
-|---|---|---|---|
-| New behavior, cover with tests, plan cases | `qa-test-design` | `docs/qa/<slug>/test-cases.md` | balanced / medium · Grok 4.6 |
-| PR, diff, test adequacy | `qa-test-review` | `docs/qa/<slug>/test-review.md` | balanced / medium · Grok 4.6 |
-| Estimate, ticket sizing, plan split | `qa-effort` | `docs/qa/<slug>/qa-estimate.md` | fast/economy / low · Composer 2.5 Fast |
+| You are writing… | Load only |
+|---|---|
+| Jest / RTL (`*.test.ts(x)`) | [ui-unit.md](references/ui-unit.md) |
+| Cypress (`cypress/`, `CYPRESS_TYPE`) | [cypress.md](references/cypress.md) |
+| Playwright (`playwright/`) | [playwright.md](references/playwright.md) |
+| JUnit / Mockito / WireMock in `impl` or `app` tests | [backend-unit.md](references/backend-unit.md) |
+| Pact (`contract-tests`) | [contract-pact.md](references/contract-pact.md) |
+| Post-deploy smoke / regression / load (`deployment-tests`) | [deployment.md](references/deployment.md) |
+| Java Selenium / Cucumber | [java-selenium.md](references/java-selenium.md) |
+| `local` vs LambdaTest vs CI wiring | [execution-environments.md](references/execution-environments.md) |
+| Technique choice (EP, BVA, personas) — optional | [test-design.md](references/test-design.md) |
 
-`<slug>` is a ticket key (`DASH-123`) or a short kebab name. Reuse the folder if it already exists.
+Unsure which row? Skim [repo-profiles.md](references/repo-profiles.md), then return to this table.
 
-Then read that skill’s `SKILL.md`. Do not load the other two skills “just in case”.
+## Not this skill
 
-## 3. Shared defaults
-
-- Layers: unit → integration (mocked or in-process) → e2e (live) → smoke (short gate). See [test-layers.md](references/test-layers.md).
-- UI locators: `data-testid` / shared testID modules.
-- Run target: local, CI, LambdaTest (`seleniumserver`), or `both` as the profile allows.
-- Write under `docs/qa/<slug>/` using `assets/templates/`.
-- Read-only review unless the operator asked to change code.
-- Obey house rules in the repo `AGENTS.md` (suite tags, cleanup, no sleep, post-deploy vs unit build).
-
-## Load order for a routed skill
-
-1. This router.
-2. [repo-profiles.md](references/repo-profiles.md) if not already classified.
-3. The selected skill `SKILL.md`.
-4. Only the references that skill names.
-5. Repo test layout, existing `docs/qa/<slug>/`, and the current diff or ticket.
-
-## References
-
-- [repo-profiles.md](references/repo-profiles.md)
-- [test-design.md](references/test-design.md)
-- [test-layers.md](references/test-layers.md)
-- [ui-frontend.md](references/ui-frontend.md)
-- [api-backend.md](references/api-backend.md)
-- [java-selenium.md](references/java-selenium.md)
-- [execution-environments.md](references/execution-environments.md)
-- [review-rubric.md](references/review-rubric.md)
-- [qa-effort.md](references/qa-effort.md)
-- [model-selection.md](references/model-selection.md)
+| Activity | Skill | Model |
+|---|---|---|
+| PR / “are these tests enough” | `qa-test-review` | Grok 4.6 |
+| Ticket estimate only | `qa-effort` | Composer 2.5 Fast |
+| Case list, no implementation | `qa-test-design` | Grok 4.6 |
