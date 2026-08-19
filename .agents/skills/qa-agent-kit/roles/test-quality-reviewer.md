@@ -22,6 +22,7 @@ constraints:
   - apply review-rubric.md plus the matching stack reference
   - findings have severity and a path
   - flag missing cleanup, leaked sessions, committed secrets, wrong layer
+  - flag invented product / course key / ISBN that the operator did not provide
   - Human gate stays pending; a pass verdict does not close it
   - do not spawn further sub-agents
   - do not start this role on flagship or max reasoning

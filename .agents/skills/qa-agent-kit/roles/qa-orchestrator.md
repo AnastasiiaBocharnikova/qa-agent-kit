@@ -20,6 +20,7 @@ constraints:
   - one specialist per stack; never two stack files in one agent
   - stay in-chat for a single specialist; Task for independent review or multi-stack
   - artifacts are drafts until the operator approves
+  - if a real product, course key, or ISBN is required, stop and ask the operator; do not invent it
   - do not commit, push, or apply fixes until the operator says so
   - do not use balanced or flagship for this role
 ```

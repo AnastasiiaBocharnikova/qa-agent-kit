@@ -14,4 +14,5 @@
 
 - Why any live e2e exists: `<or “none”>`
 - Data setup/cleanup: `<API seed, CourseCleanup, none>`
+- Data from operator (required): `<product / course key / ISBN, or “none — API seed”>`
 - Out of scope: `<deferred cases>`

@@ -54,16 +54,21 @@ Each Task prompt includes: the specialist skill path, the matching role YAML und
 
 Estimate-only after cases: load `qa-effort`, then human gate.
 
+If write or live e2e needs a real product, course key, ISBN, or other catalog value and the operator has not provided it, **STOP and ask**. Do not invent test data. API-created courses/entitlements (seed + cleanup) do not need this ask.
+
 ## Human gate (verbatim)
 
 STOP. This is a draft, not final. Agent `qa-test-review` cannot close this gate. A `pass` verdict still waits for the operator.
 
 Do not commit, push, mark merge-ready, or auto-apply should-fix/blocker fixes until the operator says so.
 
-Present: artifact paths, what to check, agent findings if any. Then wait.
+If a real product, course key, ISBN, or other catalog value is required and missing, ask for it here. Do not invent test data.
+
+Present: artifact paths, what to check, agent findings if any, and any test-data ask. Then wait.
 
 ## Forbidden
 
 - Loading all stack files, or writing tests yourself.
 - Treating agent review as approval.
+- Inventing product IDs, course keys, ISBNs, or other environment-specific test data.
 - Copying STX `@PreApps` / `@coreTest` / `@PostApps` into other repos.

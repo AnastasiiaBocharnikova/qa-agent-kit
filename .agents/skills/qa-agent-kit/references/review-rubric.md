@@ -44,6 +44,7 @@ Review the **diff of tests** (and missing tests for new behavior). First apply [
 | Live Cypress e2e where intercept integration was enough | should-fix |
 | RestAssured smoke inside the unit module / default Maven build | blocker |
 | Created course/entitlement not cleaned up | blocker |
+| Invented product / course key / ISBN instead of asking the operator | blocker |
 | Order-dependent tests / leaked WebDriver session | blocker |
 | Secrets in repo, `.env` committed, LT keys in POM | blocker |
 | New absolute XPath instead of `data-testid` | should-fix |
