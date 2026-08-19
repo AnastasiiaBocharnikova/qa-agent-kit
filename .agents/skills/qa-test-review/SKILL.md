@@ -20,14 +20,14 @@ This output is a **briefing** for the operator. A `pass` verdict does not close 
 - reasoning_effort: `medium`
 - resolved_target: Grok 4.6
 - Escalate to balanced/high only for auth, money/checkout, leftover-data, or LambdaTest-only flake. Flagship/medium only after balanced missed a high-impact gap.
-- Role: [test-quality-reviewer.md](../qa-agent-kit/roles/test-quality-reviewer.md) — same envelope as this skill. Orchestrator spawn only.
+- Role: [test-quality-reviewer.md](../qa-test-writer/roles/test-quality-reviewer.md) — same envelope as this skill. Orchestrator spawn only.
 
 ## Steps
 
 1. Name `<slug>`. Inspect the diff, new tests, and test layout.
-2. Classify the repo via [repo-profiles.md](../qa-agent-kit/references/repo-profiles.md).
-3. Review against [review-rubric.md](../qa-agent-kit/references/review-rubric.md) and **one** stack file from the write-tests skill table (Jest, Cypress, Playwright, backend unit, Pact, deployment, Selenium, or local/LambdaTest).
-4. Write `docs/qa/<slug>/test-review.md` from [test-review.md](../qa-agent-kit/assets/templates/test-review.md). Set `Human gate: pending`.
+2. Classify the repo via [repo-profiles.md](../qa-test-writer/references/repo-profiles.md).
+3. Review against [review-rubric.md](../qa-test-writer/references/review-rubric.md) and **one** stack file from the qa-test-writer stack list (Jest, Cypress, Playwright, backend unit, Pact, deployment, Selenium, or local/LambdaTest).
+4. Write `docs/qa/<slug>/test-review.md` from [test-review.md](../qa-test-writer/assets/templates/test-review.md). Set `Human gate: pending`.
 5. Do not change product or test code unless the operator asked. Do not treat this review as final.
 
 ## Findings

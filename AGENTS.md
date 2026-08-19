@@ -5,9 +5,9 @@ This file is for **this repository**. Products copy `.agents/skills/` and paste 
 ## QA agent kit
 
 - Mixed / “QA this ticket” → `qa-orchestrator`
-- Write tests / TDD → `qa-agent-kit`, then one stack file
+- Write tests / TDD → `qa-test-writer`, then one stack file
 - Cases only → `qa-test-design`
 - Review → `qa-test-review`
-- Estimate → `qa-effort`
+- Estimate → `qa-estimate`
 
 Drafts until a human approves. Ask the operator for real product/course keys.
