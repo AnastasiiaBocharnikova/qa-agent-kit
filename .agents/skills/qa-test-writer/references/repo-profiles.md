@@ -1,6 +1,6 @@
 # Repo profiles
 
-Classify the open repository before designing or reviewing tests.
+Identify and classify the open repository before designing, writing, or reviewing tests.
 
 ## ui-frontend (example: fx-ui)
 

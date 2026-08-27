@@ -12,18 +12,30 @@ description: >-
 
 This skill **writes tests**. It is not an orchestrator. Mixed or ticket-level QA uses `qa-orchestrator`. The list below is a stack index, not a second dispatcher.
 
-Load this skill **every time tests are written**. Under TDD that is every red–green–refactor cycle.
+Load this skill **every time tests are written**. Under TDD that is every red–green–refactor cycle. Start with **Before writing**, then Foundation, then one stack file.
 
 Do not load Cypress, JUnit, deployment, or Selenium files until this file says to. Do not load review or estimate skills while writing tests.
 
 Generated tests are not final without human review. Do not commit, push, or mark merge-ready until the operator says so. After approval, Cypress commits follow [commit-message.md](assets/templates/commit-message.md).
+
+## Before writing (every repo)
+
+Do this at the start of the session, **before** the first test-file change.
+
+1. **Repo.** Identify the correct repository. Classify it with [repo-profiles.md](references/repo-profiles.md). Put tests only in the repo that owns the layer (UI vs BFF vs Selenium). If this workspace is the wrong product repo, **STOP**.
+2. **Status.** Check the current branch and working tree. Report both (`git status`, `git branch --show-current`). If the tree has unrelated local changes, **STOP** and ask the operator.
+3. **Ticket branch.** Create or switch to a branch for this ticket. Follow that repo’s existing branch pattern and the ticket id the operator provided. Do not invent a Jira key. Do not implement on `main`, `master`, or the default branch.
+4. **Stay.** Make all changes only on that branch. Do not mix other tickets or switch away mid-work.
+5. **Report.** Tell the operator the repo name and active branch **before** implementation begins. Branch setup is not approval to commit or push.
+6. **Environment.** Handle the run environment for this repo. Default to **local** while writing. Use that repo’s wiring (`.env`, config-repo, `-Dtier`, `seleniumserver`) — [execution-environments.md](references/execution-environments.md). If required env files or credentials are missing, **STOP** and ask. Do not commit secrets. Do not target prod unless the operator asked.
+7. **Terminology.** Keep business language separate from test-data names. Titles, Gherkin, and assertions use product terms (course, entitlement, persona, region). Fixture files, YAML keys, aliases, and generated ids are data identifiers (`getVisitorMe`, `{courseKey}`). Do not treat a fixture name as a catalog value, or a product name as a YAML key.
 
 ## Foundation (stay here)
 
 1. **Lowest layer that can fail for the right reason.** Unit first. Mocked integration next. Live e2e only if a lower layer cannot prove it. Smoke is a short tagged gate, not a copy of regression.
 2. **TDD:** failing test at that layer → minimal code → refactor. Do not write production code without a failing test unless the operator said otherwise.
 3. **Locators:** shared `data-testid` / testID modules. No new absolute XPath. No `Thread.sleep` / `cy.wait(ms)`.
-4. **Data:** seed and delete via API. Do not invent product IDs, course keys, ISBNs, entitlements, or other environment-specific values. If a real one is required, **STOP and ask the operator** to provide it. Screenshot on UI failure; quit WebDriver. No secrets in git.
+4. **Data:** seed and delete via API. Do not invent product IDs, course keys, ISBNs, entitlements, or other environment-specific values. If a real one is required, **STOP and ask the operator** to provide it. Keep business terms out of fixture/YAML/alias names. Screenshot on UI failure; quit WebDriver. No secrets in git.
 5. **Tags:** use the repo’s own suite names. fx-ui: Cypress persona folders and Playwright/Cypress `smoke`. fx-bff: JUnit `@Tag`, post-deploy modules. **stx-e2e-tests only:** `@PreApps` (smoke), `@coreTest` (regression), `@PostApps` (prod, non-invasive). Do not copy STX tags into other repos.
 6. **One repo, one stack.** Do not add Selenium to a Jest/Cypress app or Cypress to a Java BFF. Do not duplicate the same journey in two e2e tools.
 

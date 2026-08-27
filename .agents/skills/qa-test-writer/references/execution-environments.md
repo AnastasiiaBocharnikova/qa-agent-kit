@@ -1,6 +1,6 @@
 # Local, CI, and LambdaTest
 
-Same scenarios; different driver factory / base URL / capabilities.
+Same scenarios; different driver factory / base URL / capabilities. Default to **local** while writing. Use CI, LambdaTest, or prod only when the ticket or operator names that target.
 
 ## Selenium (`seleniumserver`)
 
