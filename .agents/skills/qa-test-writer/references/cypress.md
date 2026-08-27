@@ -8,5 +8,6 @@ Load only when writing files under `cypress/` (fx-ui).
 - Timeouts and `retries` are already high — do not add `cy.wait(5000)`.
 - Credentials from `.env` / `FXUSERPASSWORD_SECRET`. Never commit `.env`.
 - Locators: same `data-testid` / `src/testID` as Jest.
+- **Commit:** [commit-message.md](../assets/templates/commit-message.md). Cypress specs use `test(TICKET-ID): …`. Cypress deps/config use `build(TICKET-ID): …`. If the ticket id is missing, stop and ask.
 
 Component state without HTTP → [ui-unit.md](ui-unit.md). CI browser smoke in Playwright → [playwright.md](playwright.md).

@@ -16,7 +16,7 @@ Load this skill **every time tests are written**. Under TDD that is every red–
 
 Do not load Cypress, JUnit, deployment, or Selenium files until this file says to. Do not load review or estimate skills while writing tests.
 
-Generated tests are not final without human review. Do not commit, push, or mark merge-ready until the operator says so.
+Generated tests are not final without human review. Do not commit, push, or mark merge-ready until the operator says so. After approval, Cypress commits follow [commit-message.md](assets/templates/commit-message.md).
 
 ## Foundation (stay here)
 
