@@ -45,6 +45,7 @@ Review the **diff of tests** (and missing tests for new behavior). First apply [
 | RestAssured smoke inside the unit module / default Maven build | blocker |
 | Created course/entitlement not cleaned up | blocker |
 | Invented product / course key / ISBN instead of asking the operator | blocker |
+| Fixture/YAML key named as a business term, or a product name used as test data | should-fix |
 | Order-dependent tests / leaked WebDriver session | blocker |
 | Secrets in repo, `.env` committed, LT keys in POM | blocker |
 | New absolute XPath instead of `data-testid` | should-fix |
