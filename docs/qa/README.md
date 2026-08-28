@@ -13,4 +13,4 @@ docs/qa/<ticket-or-slug>/
 
 These files are **drafts** until the operator sets status/human gate to approved. Agent review cannot mark them final.
 
-Templates: `.agents/skills/qa-test-writer/assets/templates/` (`test-cases.md`, `test-review.md`, `qa-estimate.md`, `commit-message.md`).
+Templates: `.agents/skills/qa-test-writer/assets/templates/` (`test-cases.md`, `zephyr-steps.md`, `test-review.md`, `qa-estimate.md`, `commit-message.md`).

@@ -17,6 +17,7 @@ constraints:
   - apply techniques from references/test-design.md
   - assign layer, surface, stack, suite_tag, run_target
   - do not invent product IDs, course keys, or ISBNs; list what the operator must provide
+  - Zephyr/manual steps: one table, no blank lines between rows, no empty steps
   - do not duplicate the same journey across Cypress and Selenium without a product reason
   - output is a draft until the operator approves; do not spawn further sub-agents
 ```
