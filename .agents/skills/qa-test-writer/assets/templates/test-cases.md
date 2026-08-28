@@ -16,3 +16,11 @@
 - Data setup/cleanup: `<API seed, CourseCleanup, none>`
 - Data from operator (required): `<product / course key / ISBN, or “none — API seed”>`
 - Out of scope: `<deferred cases>`
+
+## Zephyr steps (manual cases)
+
+Omit this section for automated-only cases. One table per case. No blank lines between rows. No empty rows. See [zephyr-steps.md](zephyr-steps.md).
+
+| Step | Test Data | Expected Result |
+|------|-----------|-----------------|
+| `<action>` | `<data or empty cell>` | `<observable result>` |
